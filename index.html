@@ -15,7 +15,32 @@
             <a onclick="darkMode()">Mode</a>
         </nav>
         <h1>Sesi 6 Cuy University</h1>
+        <p class="info" id="info"></p>
     </div>
+
+<script>
+    let body = document.body;
+    let info = document.getElementById("info");
+
+    const darkLimit = 5;
+    let darkCounter = 0;
+    let darkRemainingLeft;
+    
+
+    function darkMode() {
+        if (darkRemainingLeft == 1) {
+            info.textContent = "jatah fitur dark mode sudah habis!";
+            return;
+        }
+
+        darkCounter += 1;
+        darkRemainingLeft = darkLimit - darkCounter;
+
+        info.textContent = `Dark mode dipakai ${darkCounter}x, tersisa ${darkRemainingLeft}x`; 
+
+        body.classList.toggle("dark");
+    }
+</script>
 </body>
 
 </html>
